@@ -10,33 +10,32 @@ main = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Общежитие 🏡', callback_data='home')],
     [InlineKeyboardButton(text='Узнать шансы на поступление❓', callback_data='chances')],
     [InlineKeyboardButton(text='У меня диплом СПО, как мне поступить👨‍🎓', callback_data='SPO')],
-    [InlineKeyboardButton(text='Что делать, если не пройду туда, куда хочу🧐', callback_data='ya_loh')],
+    [InlineKeyboardButton(text='Как найти себя в списках?🧐', callback_data='spiski')],
+    [InlineKeyboardButton(text='Что делать, если не пройду туда, куда хочу🥺', callback_data='ya_loh')],
     [InlineKeyboardButton(text='Центр карьеры СТАНКИНА🔧', callback_data='career')],
     [InlineKeyboardButton(text='О нашем вузе👩‍🏫', callback_data='СТАНКИН')],
-    [InlineKeyboardButton(text='Поступление в магистратуру', callback_data='magistri')],
-    [InlineKeyboardButton(text='Поступление в аспирантуру', callback_data='aspiranti')],
-    [InlineKeyboardButton(text='Контакты', callback_data='contacts')]
+    [InlineKeyboardButton(text='Контакты📞', callback_data='contacts'),
+     InlineKeyboardButton(text='Хочу задать вопрос👩‍💻', callback_data='q1')]
 ])
 
 
 RULES = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text='Льготы', callback_data='lgot')],
+    [InlineKeyboardButton(text='Квоты', callback_data='lgot')],
     [InlineKeyboardButton(text='Что такое приоритетное зачисление', callback_data='prior')],
     [InlineKeyboardButton(text='Как работает система приоритетов', callback_data='sys_prior')],
     [InlineKeyboardButton(text='Калькулятор индивидуальных достижений', callback_data='calc')],
     [InlineKeyboardButton(text='Ограничения на подачу заявлений', callback_data='ogranich')],
     [InlineKeyboardButton(text='Как формируется конкурсный балл', callback_data='ball')],
-    [InlineKeyboardButton(text='минимальные баллы для подачи заявления', callback_data='min_ball')],
+    [InlineKeyboardButton(text='Минимальные баллы для подачи заявления', callback_data='min_ball')],
     [InlineKeyboardButton(text='Кто может писать вступительные экзамены?', callback_data='vstupi')],
-    [InlineKeyboardButton(text='Расписание вступительных экзаменов', callback_data='vstupi_rasp')],
-    [InlineKeyboardButton(text='назад', callback_data='back_to_main')]
+    [InlineKeyboardButton(text='Расписание вступительных экзаменов', url='https://priem.stankin.ru/bakalavriatispetsialitet/exam_schedule/')],
+    [InlineKeyboardButton(text='Назад', callback_data='back_to_main')]
 ])
 
 
 SPO = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Какие экзамены мне нужно сдать?', callback_data='exams_how_much')],
     [InlineKeyboardButton(text='Как проходят вступительные экзамены', callback_data='exams_how')],
-    [InlineKeyboardButton(text='Расписание экзаменов', callback_data='exams_rasp')],
     [InlineKeyboardButton(text='Назад', callback_data='back_to_main')]
 ])
 
@@ -46,14 +45,6 @@ LGOTI = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Особая квота', callback_data='osob')],
     [InlineKeyboardButton(text='Отдельная квота', callback_data='otd')],
     [InlineKeyboardButton(text='Назад', callback_data='rules')]
-])
-
-
-BMA = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text='Бакалавриат', callback_data='bac')],
-    [InlineKeyboardButton(text='Магистратура', callback_data='mag')],
-    [InlineKeyboardButton(text='Аспирантура', callback_data='asp')],
-    [InlineKeyboardButton(text='Назад', callback_data='SPO')]
 ])
 
 
@@ -111,38 +102,40 @@ BUILD = InlineKeyboardMarkup(inline_keyboard=[
 VARIANTS = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Дистанционно', callback_data='dist')],
     [InlineKeyboardButton(text='Очно', callback_data='ochn')],
-    [InlineKeyboardButton(text='Почта России(не рекомендуется)', callback_data='post')],
+    [InlineKeyboardButton(text='Почта России', callback_data='post')],
     [InlineKeyboardButton(text='Назад', callback_data='back_to_main')]
 ])
 
 
 VARIANTS_2 = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text='Дистанционно', callback_data='dist')],
+    [InlineKeyboardButton(text='Инструкция ГосУслуги', url='https://vk.com/video-73442711_456239640')],
+    [InlineKeyboardButton(text='Инструкция по нашему сайту приема документов', url='https://www.youtube.com/watch?v=1gxO8XMAKIc')],
+    [InlineKeyboardButton(text='Наш сайт приема документов', url='https://sdpd.stankin.ru/')],
     [InlineKeyboardButton(text='Очно', callback_data='ochn')],
-    [InlineKeyboardButton(text='Видео-инструкция ГосУслуги', url='https://vk.com/video-73442711_456239640')],
+    [InlineKeyboardButton(text='Почта России', callback_data='post')],
     [InlineKeyboardButton(text='Назад', callback_data='back_to_main')]
 ])
 
 
 VIBOR = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text='ЕГЭ', callback_data='e')],
+    [InlineKeyboardButton(text='ЕГЭ или ВВИ', callback_data='e')],
     [InlineKeyboardButton(text='СПО', callback_data='s')],
     [InlineKeyboardButton(text='Назад', callback_data='back_to_main')]
 ])
 
 
-CALC_VIBOR = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text='Бакалавр/Специалитет', callback_data='c_b')],
-    [InlineKeyboardButton(text='Магистратура', callback_data='c_m')],
-    [InlineKeyboardButton(text='Аспирантура', callback_data='c_a')],
+SPISKI = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Списки к приказу', callback_data='rang')],
+    [InlineKeyboardButton(text='Личный кабинет', callback_data='kab')],
+    [InlineKeyboardButton(text='Про оригинал аттестата', callback_data='at')],
     [InlineKeyboardButton(text='Назад', callback_data='back_to_main')]
 ])
 
 
-async def to_main(url=None):
+async def to_main(text='Учебный план', url=None):
     builder = InlineKeyboardBuilder()
     if url is not None:
-        builder.add(InlineKeyboardButton(text='Учебный план', url=url))
+        builder.add(InlineKeyboardButton(text=text, url=url))
     builder.add(InlineKeyboardButton(text='Назад', callback_data='back_to_main'))
     return builder.adjust(1).as_markup()
 
@@ -159,7 +152,7 @@ async def b():
     builder = InlineKeyboardBuilder()
     results = get_b()
     for item in results.keys():
-        builder.add(InlineKeyboardButton(text=item, callback_data=f'b+{results[item]}'))
+        builder.add(InlineKeyboardButton(text=item, callback_data=f"b+{results[item]}"))
     builder.add(InlineKeyboardButton(text='Обнулить баллы', callback_data='b//0'))
     builder.add(InlineKeyboardButton(text='Назад', callback_data='rules'))
     return builder.adjust(1).as_markup()
@@ -169,7 +162,7 @@ async def m():
     builder = InlineKeyboardBuilder()
     results = get_m()
     for item in results.keys():
-        builder.add(InlineKeyboardButton(text=item, callback_data=f'm+{results[item]}'))
+        builder.add(InlineKeyboardButton(text=item, callback_data=f"m+{results[item]}"))
     builder.add(InlineKeyboardButton(text='Обнулить баллы', callback_data='m//0'))
     builder.add(InlineKeyboardButton(text='Назад', callback_data='rules'))
     return builder.adjust(1).as_markup()
@@ -179,7 +172,7 @@ async def a():
     builder = InlineKeyboardBuilder()
     results = get_a()
     for item in results.keys():
-        builder.add(InlineKeyboardButton(text=item, callback_data=f'a+{results[item]}'))
+        builder.add(InlineKeyboardButton(text=item, callback_data=f"a+{results[item]}"))
     builder.add(InlineKeyboardButton(text='Обнулить баллы', callback_data='a//0'))
     builder.add(InlineKeyboardButton(text='Назад', callback_data='rules'))
     return builder.adjust(1).as_markup()

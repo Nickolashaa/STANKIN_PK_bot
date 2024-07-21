@@ -3,12 +3,12 @@ import json
 
 def txt_to_str(file, direction=False):
     if direction:
-        with open(f'app/files/directions/{file}', 'r', encoding='utf-8') as f:
+        with open(f"app/files/directions/{file}", 'r', encoding='utf-8') as f:
             string = f.read()
             f.close()
         return string
     else:
-        with open(f'app/files/{file}', 'r', encoding='utf-8') as f:
+        with open(f"app/files/{file}", 'r', encoding='utf-8') as f:
             string = f.read()
             f.close()
         return string
@@ -54,3 +54,22 @@ def get_a():
         directions = json.load(f)
         f.close()
     return directions
+
+
+def new_member(name):
+    with open('app/stat.json', 'r') as f:
+        stat = json.load(f)
+        f.close()
+    stat["cnt"] += 1
+    if name not in stat["members"]:
+        stat["members"].append(name)
+    with open('app/stat.json', 'w') as f:
+        json.dump(stat, f)
+        f.close()
+
+
+def get_stat():
+    with open('app/stat.json', 'r') as f:
+        stat = json.load(f)
+        f.close()
+    return stat
